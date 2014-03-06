@@ -14,10 +14,10 @@ sudo -v
 
     # Set computer name (as done via System Preferences → Sharing)
 
-    sudo scutil --set ComputerName "jedbook"
-    sudo scutil --set HostName "jedbook"
-    sudo scutil --set LocalHostName "jedbook"
-    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "jedbook"
+    sudo scutil --set ComputerName "mikebook"
+    sudo scutil --set HostName "mikebook"
+    sudo scutil --set LocalHostName "mikebook"
+    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "mikebook"
 
 #
 # Aesthetic and animation tweaks
