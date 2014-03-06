@@ -25,7 +25,7 @@ sudo -v
 
     # Disable main OSX menu bar transparency
 
-    defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+    defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
     # Show battery power remaining as a percentage
 
@@ -182,10 +182,10 @@ sudo -v
 
     defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
-    # Require password immediately after sleep or screen saver begins
+    # Require password 5 seconds after sleep or screen saver begins
 
     defaults write com.apple.screensaver askForPassword -int 1
-    defaults write com.apple.screensaver askForPasswordDelay -int 0
+    defaults write com.apple.screensaver askForPasswordDelay -int 5
 
     # Save screenshots to the desktop
 
