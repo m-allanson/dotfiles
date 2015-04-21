@@ -1,6 +1,25 @@
+[alias]
+	# Readable concise status
+	s = status -s -b
+	# Readble pretty logs
+	l = log --format='%h %Cred%ar%Creset %Cgreen%s' --graph
+	# Fetch origin, checkout develop and reset local develop to origin's develop
+	rsd = !"git fetch origin -p && git checkout develop && git reset --hard origin/develop"
+	# Fetch origin and rebase the current branch against origin's develop
+	rbd = !"git fetch origin -p && git rebase origin/develop"
+	# Fetch origin, checkout master and reset local master to origin's master
+	rsm = !"git fetch origin -p && git checkout master && git reset --hard origin/master"
+	# Checkout a new branch in the format mike/{feature-name}
+	nf = "!f() { git checkout -b \"mike/$1\" 2> /dev/null || git checkout \"mike/$1\"; }; f"
+	# Delete all local branches that have been merged with master
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	# Amend the previous commit
+	amend = !"git add -A && git commit --amend --no-edit"
 [core]
-	editor = nano
+	editor = vim
 	excludesfile = ~/.gitignore
+	# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx
+	trustctime = false
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
@@ -20,9 +39,8 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
-[branch "master"]
-	# Use `origin` as the default remote on the `master` branch in all cases
-	remote = origin
-	merge = refs/heads/master
 [push]
 	default = simple
+[diff]
+	# Detect copies as well as renames
+	renames = copies

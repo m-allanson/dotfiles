@@ -1,6 +1,6 @@
-# Better default ls
+# Nice ls
 #   -l Long format with details
-#   -A Almost all (include hidden, excluse . and ..)
+#   -A Almost all (include hidden, exclude . and ..)
 #   -h Human readable file sizes
 #   -G or --color-auto Colourise output on Linux and OSX
 #   -F Classify entries with one of the following types
@@ -9,32 +9,10 @@
 #     @ Symlink
 #     | Pipe
 #     = Socket
+alias ls="ls -GlAhF"
 
-if [ "$TERM" != "dumb" ]
-then
-	if [ $(uname) == "Linux"  ]
-	then
-		alias ls="ls -lAhF --color=auto"
- 	else
-   		alias ls="ls -GlAhF"
- 	fi
-fi
+# Flush DNS cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
-# Navigation
-
-alias cdwork="cd ~/work"
-alias cddb="cd ~/Documents/Dropbox"
-
-# Update OSX, Homebrew, npm and their installed packages
-
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g;'
-
-# Faster npm for europeans (cant't use for publishing)
-
-command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"
-
-# Git
-
-alias gs="git status -s -b"
-alias gl="git log --format='%h %Cred%ar%Creset %Cgreen%s' --graph"
-alias gb="git branch --color -vv"
+# Lock the screen
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
