@@ -10,12 +10,3 @@
 #     | Pipe
 #     = Socket
 alias ls="ls -GlAhF"
-
-# Flush DNS cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# Lock the screen
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# Force sign a python binary to avoid OSX firewall nagging
-alias pysign="sudo codesign --force --deep --sign - $(which python)"

@@ -1,7 +1,7 @@
 [alias]
 	# Readable concise status
 	s = status -s -b
-	# Readble pretty logs
+	# Readable pretty logs
 	l = log --format='%h %Cred%ar%Creset %Cgreen%s' --graph
 
 	# Fetch origin, checkout develop and reset local develop to origin's develop

@@ -1,18 +1,2 @@
-# IDE configs
-
-*.sublime-workspace
-.idea
-
-# Auto-generated files
-
-*.pyc
-.DS_Store*
-.Spotlight-V100
-._*
-Desktop.ini
-Thumbs.db
-ehthumbs.db
-
-# Dotfiles secrets
-
-.extras
+# exclude a secrets file
+secrets

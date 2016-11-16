@@ -1,0 +1,18 @@
+# Editor configs
+*.sublime-workspace
+.idea
+
+# OS files
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+._*
+Desktop.ini
+.Spotlight-V100
+
+# Compiled files
+*.pyc
+
+# Files that can leak creds and private data
+.netrc
+.ssh
