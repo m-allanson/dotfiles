@@ -12,3 +12,6 @@
 alias ls="ls -GlAhF"
 
 alias canary-debug="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222"
+
+# Cat Package.json Scripts
+alias cps="cat package.json | jq '.scripts'"
