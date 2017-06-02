@@ -19,3 +19,10 @@ export PATH=/usr/local/bin:$PATH
 
 # Make sure global npm binaries are available
 export PATH=/usr/local/share/npm/bin:$PATH
+
+# Go config
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+
+# AWS CLI autocompletion
+complete -C '/usr/local/etc/bash_completion.d' aws
