@@ -31,6 +31,10 @@
 
 	# Amend the previous commit
 	amend = !"git add -A && git commit --amend --no-edit"
+
+	# Merge changes from upstream into master
+	merge-upstream = !"git rsm && git fetch upstream && git merge upstream/master"
+
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
