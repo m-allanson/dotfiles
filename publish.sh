@@ -13,6 +13,5 @@ cp -fi gitconfig ~/.gitconfig
 cp -fi gitignore ~/.gitignore
 cp -fi vimrc ~/.vimrc
 cp -fi prompt ~/.prompt
-cp -fi atom-init.coffee ~/.atom/init.coffee
 [ -r secrets ] && cp -fi secrets ~/.secrets
 printf "\n\033[0;32m✓ Publish complete\033[0m\n"
