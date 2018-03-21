@@ -13,7 +13,7 @@
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 
 	# Reset the current branch to upstream's version
-	rs-upstream = "!git stash && git fetch origin -p && git reset --hard upstream/$(git branch-name)"
+	rs-upstream = "!git stash && git fetch upstream -p && git reset --hard upstream/$(git branch-name)"
 
 	# Rebase the current branch against upstream's master
 	rb-upstream = "!git stash && git fetch upstream && git rebase upstream/master"
