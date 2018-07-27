@@ -43,7 +43,7 @@
 	# dm = "!git rsm && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 	# Delete all local branches that have been merged with the current branch
-#	dm = "!git branch --merged | egrep -v '(^\*|master|develop)' | xargs git branch -d"
+	# dm = "!git branch --merged | egrep -v '(^\*|master|develop)' | xargs git branch -d"
 
 	# Amend the previous commit
 	amend = "!git add -A && git commit --amend --no-edit"
