@@ -44,14 +44,14 @@ prompt_git() {
                       git rev-parse --short HEAD 2> /dev/null || \
                       printf "(unknown)")"
 
-        printf "%s" "$1$branchName$s"
+        printf "%s" " → $1$branchName$s"
     else
         return
     fi
 }
 
 set_prompts() {
-    PS1="💻 \W \[\e[0;90m\]\$(prompt_git)\[\e[0m\]\n"
+    PS1="💻 \W\[\e[0;37m\]\$(prompt_git)\[\e[0m\]\n"
     export PS1
 }
 
