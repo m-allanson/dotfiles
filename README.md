@@ -19,9 +19,3 @@ This will interactively copy each file one-by-one asking permission each time an
 Some settings are personal, secret or otherwise not appropriate for putting in a public repo. Such settings could include but are not limited to Git username and email config settings or starting and configuring tools particular to your system.
 
 If present, the publish script will attempt to copy a file called `secrets` to `~/.secrets`. This file is ignored from this repo, so if you want to use this feature then manually add the file.
-
-### .osx
-
-Copied from mathiasbynen's [mths.be/osx](http://mths.be/osx) file, this isn't a dotfile in the strict sense. It doesn't live in your home directory and run automatically, rather you can manually invoke it whenever you want to apply the OSX settings contained within it. Designed to be used to quickly set some familiar defaults when setting up a new system or user account.
-
-	./.osx
