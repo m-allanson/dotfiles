@@ -50,8 +50,29 @@ prompt_git() {
     fi
 }
 
+# Show abbreviated pwd for longer paths
+# https://stackoverflow.com/questions/5687446/bash-custom-ps1-with-nice-working-directory-path#answer-33572866
+function generate_pwd {
+  pwd | sed s.$HOME.~.g | awk -F"/" '
+  BEGIN { ORS="/" }
+  END {
+  for (i=1; i<= NF; i++) {
+      if ((i == 1 && $1 != "") || i == NF-1 || i == NF) {
+        print $i
+      }
+      else if (i == 1 && $1 == "") {
+        print "/"$2
+        i++
+      }
+      else {
+        print ".."
+      }
+    }
+  }'
+}
+
 set_prompts() {
-    PS1="ᛝ \W\[\e[0;37m\]\$(prompt_git)\[\e[0m\]\n"
+    PS1="ᛝ \$(generate_pwd)\[\e[0;37m\]\$(prompt_git)\[\e[0m\]\n"
     export PS1
 }
 
