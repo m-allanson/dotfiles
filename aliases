@@ -13,3 +13,9 @@ alias ls="ls -GlAhF"
 
 # Cat Package.json Scripts
 alias cps="cat package.json | jq '.scripts'"
+
+# Open Gatsby's PR page - Hub Gatsby Pulls
+alias hgp="hub browse gatsbyjs/gatsby pulls"
+
+# Open Gatsby's issues page - Hub Gatsby Issues
+alias hgi="hub browse gatsbyjs/gatsby issues"

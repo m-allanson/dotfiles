@@ -47,3 +47,12 @@ export NVM_DIR="$HOME/.nvm"
 # else
 #     echo "WARNING: Can't find virtualenvwrapper.sh"
 # fi
+
+
+# pyenv
+eval "$(pyenv init -)"
+
+# virtual env wrapper config
+export VIRTUALENVWRAPPER_PYTHON=/Users/mike/.pyenv/shims/python3
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
