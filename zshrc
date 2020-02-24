@@ -91,5 +91,5 @@ prompt pure
 
 # TODO: run compinit and do any other completion setups
 # TODO: prompt twiddling?
-# TODO: investigate making plugin / completion installation less manual
+# TODO: investigate making plugin / completion installation less manual. Maybe dotbot (https://github.com/anishathalye/dotbot) or adding some gitupdate commands to publish.sh
 # TODO: delete old bash related configs from ~?
