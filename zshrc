@@ -92,3 +92,4 @@ prompt pure
 # TODO: run compinit and do any other completion setups
 # TODO: prompt twiddling?
 # TODO: investigate making plugin / completion installation less manual
+# TODO: delete old bash related configs from ~?
