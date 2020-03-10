@@ -1,21 +1,35 @@
 # dotfiles
 
-A selection of personal dotfiles designed for OSX.
+My dotfiles for macOS.
 
-Inspired and in many cases shamelessly copy and pasted from [github.com/jedrichards/dotfiles](https://github.com/jedrichards/dotfiles) and  [dotfiles.github.com](http://dotfiles.github.com/), especially [github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles).
+Inspired by (and often copied from) from various places, such as:
 
-### Usage
+- https://scriptingosx.com/2019/06/moving-to-zsh/
+- https://github.com/jedrichards/dotfiles
+- http://dotfiles.github.com/
+- https://github.com/mathiasbynens/dotfiles
 
-The repo should be cloned to some sensible location on your system, for example `~/work/dotfiles/`. The following command can them be used to copy these dot files to your home directory:
+## Dependencies
 
-```sh
-$ ./publish.sh
-```
+For now dependencies are installed manually and expected to be in `~/.zsh/`. Refer to comments in the `./zshrc` file for dependency source locations.
 
-This will interactively copy each file one-by-one asking permission each time any existing file will be overwritten. You should restart your shell once publishing has completed.
+Expected dependency locations:
+
+- `~/.zsh/.zsh-better-npm-completion`
+- `~/.zsh/.zsh-git-completion`
+- `~/.zsh/.zsh-nvm`
+- `~/.zsh/pure`
+
+(TODO: investigate automating plugin / completion installation)
+
+## Usage
+
+- clone this repo
+- ensure dependencies are installed (see previous section)
+- run the publish script `./publish.sh`
+- confirm the copy command for any files that are overwritten
+- restart your shell or run `source ~/.zshrc` to apply the updates
 
 ### Secrets
 
-Some settings are personal, secret or otherwise not appropriate for putting in a public repo. Such settings could include but are not limited to Git username and email config settings or starting and configuring tools particular to your system.
-
-If present, the publish script will attempt to copy a file called `secrets` to `~/.secrets`. This file is ignored from this repo, so if you want to use this feature then manually add the file.
+The publish script will attempt to copy a file called `secrets` to `~/.secrets`. The `secrets` file is ignored from the repo. Use it to add any config that should not be committed to your repo.
