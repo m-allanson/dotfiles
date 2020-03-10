@@ -20,7 +20,9 @@ Expected dependency locations:
 - `~/.zsh/.zsh-nvm`
 - `~/.zsh/pure`
 
-(TODO: investigate automating plugin / completion installation)
+Note that you will need to manually keep dependencies up to date.
+
+(TODO: investigate automating dependency installation and updates)
 
 ## Usage
 
