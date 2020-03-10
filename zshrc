@@ -31,9 +31,9 @@ alias serve="caddy file-server"
 #-------------------------------------------------------------------------------
 
 # git
-git config --global user.name "Mike Allanson"
-git config --global user.email "michael.allanson@gmail.com"
-git config --global github.user "m-allanson"
+# git config --global user.name "check secrets"
+# git config --global user.email "check secrets"
+# git config --global github.user "check secrets"
 # git config --global github.token "check secrets"
 
 
@@ -89,7 +89,7 @@ prompt pure
 #  Other
 #-------------------------------------------------------------------------------
 
-# TODO: run compinit and do any other completion setups
+# TODO: run compinit(?) and do any other completion setups
 # TODO: prompt twiddling?
 # TODO: investigate making plugin / completion installation less manual. Maybe dotbot (https://github.com/anishathalye/dotbot) or adding some gitupdate commands to publish.sh
 # TODO: delete old bash related configs from ~?
