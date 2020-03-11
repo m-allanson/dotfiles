@@ -5,14 +5,8 @@
 # the same name in ~ will be clobbered so be careful. You should restart your
 # terminal afterwards.
 
-cp -fi aliases ~/.aliases
-cp -fi bash_profile ~/.bash_profile
-cp -fi bashrc ~/.bashrc
-cp -fi exports ~/.exports
+cp -fi zshrc ~/.zshrc
 cp -fi gitconfig ~/.gitconfig
 cp -fi gitignore ~/.gitignore
-cp -fi vimrc ~/.vimrc
-cp -fi prompt ~/.prompt
-cp -f gatsby-links.sh ~/gatsby-links.sh # non-interactive copy
 [ -r secrets ] && cp -fi secrets ~/.secrets
 printf "\n\033[0;32m✓ Publish complete\033[0m\n"
