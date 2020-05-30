@@ -1,2 +1,3 @@
-# exclude a secrets file
 .top-secret-do-not-read
+
+.vscode/settings.json
