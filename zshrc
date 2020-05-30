@@ -59,6 +59,9 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/mike/Library/Caches/heroku/autocomplete/zsh_setu
 # autocompletion
 autoload -Uz compinit && compinit
 
+# fish style autocompletion. installed via 'brew install zsh-autosuggestions'
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # nvm. Uses the zsh-nvm zsh plugin https://github.com/lukechilds/zsh-nvm
 export NVM_LAZY_LOAD=true # was it nvm that caused the delay on new terminal windows?!
 source ~/.zsh/.zsh-nvm/zsh-nvm.plugin.zsh
