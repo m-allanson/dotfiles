@@ -23,7 +23,7 @@ alias ls="ls -GlAhF"
 alias cps="cat package.json | jq '.scripts'"
 
 # Quick web server (using Caddy 2.0)
-alias serve="caddy file-server"
+alias serve="caddy file-server  --listen :2222"
 
 
 #
