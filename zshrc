@@ -78,15 +78,8 @@ source ~/.zsh/.zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh
 #  Prompt
 #-------------------------------------------------------------------------------
 
-# Pure prompt. https://github.com/sindresorhus/pure
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-
-# optional options
-PURE_CMD_MAX_EXEC_TIME=10
-
-# fire it up
-prompt pure
+# https://github.com/starship/starship
+eval "$(starship init zsh)"
 
 #
 #  Other
