@@ -56,14 +56,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # heroku autocomplete. Created via "heroku autocomplete:script zsh"
 HEROKU_AC_ZSH_SETUP_PATH=/Users/mike/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
-# git autocomplete.
-# Copy both these files to the dir:
-# - https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
-# - https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
-#
-# These instructions from https://medium.com/@oliverspryn/adding-git-completion-to-zsh-60f3b0e7ffbc
-zstyle ':completion:*:*:git:*' script ~/.zsh/.zsh-git-completion/git-completion.zsh
-fpath=(~/.zsh/.zsh-git-completion $fpath)
+# autocompletion
 autoload -Uz compinit && compinit
 
 # nvm. Uses the zsh-nvm zsh plugin https://github.com/lukechilds/zsh-nvm
