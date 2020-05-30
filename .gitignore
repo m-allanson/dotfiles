@@ -1,2 +1,2 @@
 # exclude a secrets file
-secrets
+.top-secret-do-not-read
