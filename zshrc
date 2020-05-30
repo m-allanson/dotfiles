@@ -25,6 +25,9 @@ alias cps="cat package.json | jq '.scripts'"
 # Quick web server (using Caddy 2.0)
 alias serve="caddy file-server  --listen :2222"
 
+# Because I can never remember how to tell nvm "install newest LTS and set it to default"
+alias node-lts="nvm install \"lts/*\" && nvm alias default \"lts/*\""
+alias node-latest="nvm install node && nvm use node"
 
 #
 #  Configs & completions
