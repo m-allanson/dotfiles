@@ -26,6 +26,13 @@ Note that you will need to manually keep dependencies up to date.
 
 ## Usage
 
+~/.gitconfig should contain:
+
+```
+[include]
+	path = <path/to/this/repo>/.gitconfig
+```
+
 - clone this repo
 - ensure dependencies are installed (see previous section)
 - run the publish script `./publish.sh`

@@ -91,3 +91,5 @@
 [diff]
 	# Detect copies as well as renames
 	renames = copies
+[include]
+	path = .gitconfig.personal
