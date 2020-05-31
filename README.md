@@ -63,11 +63,13 @@ In this repo you can optionally:
 	token = atokengoeshere
 ```
 
+Both of these files will be ignored by git.
+
 ---
 
 ### Finish
 
-Restart your shell or run `source ~/.zshrc` to apply the updates!
+Restart your shell or run `source ~/.zshrc` to apply the updates.
 
 ## Other dependencies
 
