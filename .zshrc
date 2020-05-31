@@ -28,18 +28,17 @@ else
   compinit -d "$HOME/.zcompdump" -C
 fi
 
-# Install zsh-nvm https://github.com/lukechilds/zsh-nvm
+
+# External dependencies
+# https://github.com/lukechilds/zsh-nvm
 export NVM_LAZY_LOAD=true # don't be so slow
-source "$HOME/.zsh/.zsh-nvm/zsh-nvm.plugin.zsh"
+source "$DOTFILEADDONSDIR/zsh-nvm/zsh-nvm.plugin.zsh"
 
-# Autosuggestions for fish style autocompletion. Installed via 'brew install zsh-autosuggestions'
+# https://github.com/zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
-source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$DOTFILEADDONSDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 
-#  Prompt
+# Prompt
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
-eval "$(starship init zsh)" # https://github.com/starship/starship
-
-# Test start up time:
-# for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
+eval "$(starship init zsh)"
