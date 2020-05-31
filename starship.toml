@@ -1,0 +1,17 @@
+[aws]
+disabled = true
+
+[git_branch]
+style = "bright-white"
+
+[git_status]
+style = "yellow"
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[package]
+disabled = true
