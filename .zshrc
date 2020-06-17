@@ -38,3 +38,5 @@ source "$DOTFILEADDONSDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # Prompt
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 eval "$(starship init zsh)"
+
+# TODO: check in and see if this issue has been fixed https://github.com/starship/starship/issues/560
