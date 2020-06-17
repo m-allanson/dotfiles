@@ -1,8 +1,7 @@
 #  Aliases
 alias ls="ls -GlAhF"
-alias serve="caddy file-server --listen :2222" # quick web server
-
 alias cps="jq '.scripts' package.json" # list scripts from package.json
+alias s="serve" # quick web server https://github.com/vercel/serve
 
 
 # Personal settings
