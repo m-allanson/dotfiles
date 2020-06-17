@@ -2,9 +2,6 @@
 alias ls="ls -GlAhF"
 alias serve="caddy file-server --listen :2222" # quick web server
 
-# Can I remember how nvm works? no.
-alias node-lts="nvm install \"lts/*\" && nvm alias default \"lts/*\""
-alias node-latest="nvm install node && nvm use node"
 alias cps="jq '.scripts' package.json" # list scripts from package.json
 
 
@@ -18,6 +15,8 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export EDITOR="vim"
+export N_PREFIX=$HOME/.n # n instead of nvm https://github.com/tj/n
+export PATH=$N_PREFIX/bin:$PATH
 export PATH=/usr/local/bin:$PATH # prioritise brews over system binaries
 
 # Refer to https://carlosbecker.com/posts/speeding-up-zsh/
