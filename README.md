@@ -75,6 +75,7 @@ Restart your shell or run `source ~/.zshrc` to apply the updates.
 This `.zshrc` expects the following programs to be available:
 
 - [jq](https://github.com/stedolan/jq)
+- [n](https://github.com/tj/n)
 - [serve](https://github.com/vercel/serve)
 - [starship](https://starship.rs)
 
