@@ -39,7 +39,6 @@ Install any zsh addons to `$DOTFILEADDONSDIR`. In this example it's `~/.zsh`.
 ```
 ❯ ls ~/.zsh
 drwxr-xr-x zsh-autosuggestions/
-drwxr-xr-x zsh-nvm/
 ```
 
 Review the `.zshrc` file for expected addons.
@@ -76,7 +75,7 @@ Restart your shell or run `source ~/.zshrc` to apply the updates.
 This `.zshrc` expects the following programs to be available:
 
 - [jq](https://github.com/stedolan/jq)
-- [caddy](https://github.com/caddyserver/caddy)
+- [serve](https://github.com/vercel/serve)
 - [starship](https://starship.rs)
 
 Ensure they are installed on your system.

@@ -30,10 +30,6 @@ fi
 
 
 # External dependencies
-# https://github.com/lukechilds/zsh-nvm
-export NVM_LAZY_LOAD=true # don't be so slow
-source "$DOTFILEADDONSDIR/zsh-nvm/zsh-nvm.plugin.zsh"
-
 # https://github.com/zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 source "$DOTFILEADDONSDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
