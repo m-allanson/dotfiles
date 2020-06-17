@@ -1,11 +1,11 @@
 #  Aliases
 alias ls="ls -GlAhF"
-alias cps="cat package.json | jq '.scripts'" # list scripts from package.json
 alias serve="caddy file-server --listen :2222" # quick web server
 
 # Can I remember how nvm works? no.
 alias node-lts="nvm install \"lts/*\" && nvm alias default \"lts/*\""
 alias node-latest="nvm install node && nvm use node"
+alias cps="jq '.scripts' package.json" # list scripts from package.json
 
 
 # Personal settings
