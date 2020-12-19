@@ -42,6 +42,9 @@ fi
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 source "$DOTFILEADDONSDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+# tabtab source for various packages. sls and serverless last time I looked
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 # Prompt
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
