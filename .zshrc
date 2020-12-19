@@ -42,6 +42,9 @@ fi
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 source "$DOTFILEADDONSDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+# Heroku autocompletions
+HEROKU_AC_ZSH_SETUP_PATH=/Users/mike/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
 # tabtab source for various packages. sls and serverless last time I looked
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
