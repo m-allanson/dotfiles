@@ -16,9 +16,17 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export EDITOR="vim"
-export N_PREFIX=$HOME/.n # n instead of nvm https://github.com/tj/n
-export PATH=$N_PREFIX/bin:$PATH
+
+# export N_PREFIX=$HOME/.n # n instead of nvm https://github.com/tj/n
+# export PATH=$N_PREFIX/bin:$PATH
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 export PATH=/usr/local/bin:$PATH # prioritise brews over system binaries
+
+# Disable telemetry for SAM CLI
+export SAM_CLI_TELEMETRY=0
 
 # Refer to https://carlosbecker.com/posts/speeding-up-zsh/
 autoload -Uz compinit
