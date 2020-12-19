@@ -15,40 +15,22 @@
 	# Reset the current branch to upstream's version
 	rs-upstream = "!git stash && git fetch upstream -p && git reset --hard upstream/$(git branch-name)"
 
-	# Rebase the current branch against upstream's master
-	rb-upstream = "!git stash && git fetch upstream && git rebase upstream/master"
-
 	# Reset the current branch to origin's version
 	rs-origin = "!git stash && git fetch origin -p && git reset --hard origin/$(git branch-name)"
-
-	# Rebase the current branch against origin's master
-	rb-origin = "!git stash && git fetch origin && git rebase origin/master"
 
 	# Push the current branch to origin and track it
 	publish = "!git push -u origin $(git branch-name)"
 
-	# Fetch origin, checkout develop and reset local develop to origin's develop
-	# rsd = "!git stash && git fetch origin -p && git checkout develop && git reset --hard origin/develop"
-
-	# Fetch origin and rebase the current branch against origin's develop
-	# rbd = "!git fetch origin -p && git rebase origin/develop"
-
-	# Fetch origin, checkout master and reset local master to origin's master
-	rsm = "!git checkout master && git rs-origin"
-
 	# Checkout a new branch in the format mike/{feature-name}
 	nf = "!f() { git checkout -b \"mike/$1\" 2> /dev/null || git checkout \"mike/$1\"; }; f"
 
-	# Delete all local branches that have been merged with master
-	# dm = "!git rsm && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
-
 	# Delete all local branches that have been merged with the current branch
-	# dm = "!git branch --merged | egrep -v '(^\*|master|develop)' | xargs git branch -d"
+	# dm = "!git branch --merged | egrep -v '(^\*|main|master|develop)' | xargs git branch -d"
 
 	# Amend the previous commit
 	amend = "!git add -A && git commit --amend --no-edit"
 
-	# Merge changes from upstream into master
+	# Merge changes from upstream into current branch
 	merge-upstream = "!git rs-upstream"
 
 	# Update logs based on http://stackoverflow.com/a/34467298/517553
