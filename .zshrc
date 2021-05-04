@@ -49,6 +49,9 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/mike/Library/Caches/heroku/autocomplete/zsh_setu
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
+# rust
+source "$HOME/.cargo/env"
+
 # Prompt
 export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 eval "$(starship init zsh)"

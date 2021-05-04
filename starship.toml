@@ -1,3 +1,5 @@
+add_newline = false
+
 [aws]
 disabled = true
 
@@ -8,6 +10,9 @@ style = "bright-white"
 style = "yellow"
 
 [nodejs]
+disabled = true
+
+[rust]
 disabled = true
 
 [python]
