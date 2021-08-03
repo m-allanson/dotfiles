@@ -19,11 +19,10 @@ export EDITOR="vim"
 
 # export N_PREFIX=$HOME/.n # n instead of nvm https://github.com/tj/n
 # export PATH=$N_PREFIX/bin:$PATH
+export PATH=/usr/local/bin:$PATH # prioritise brews over system binaries
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-export PATH=/usr/local/bin:$PATH # prioritise brews over system binaries
 
 # Disable telemetry for SAM CLI
 export SAM_CLI_TELEMETRY=0
