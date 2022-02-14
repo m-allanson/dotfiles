@@ -1,3 +1,9 @@
+# Tail Portal Manager. TODO: look into using autoload with a functions directory
+tpm() {
+  local podName=$(kubectl get pod -n storageos -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}' | grep 'portal-manager')
+  kubectl logs -n storageos $podName -f manager | jq
+}
+
 #  Aliases
 alias ls="ls -GlAhF"
 alias cps="jq '.scripts' package.json" # list scripts from package.json
@@ -6,8 +12,6 @@ alias s="serve" # quick web server https://github.com/vercel/serve
 alias c="code"
 alias k="kubectl"
 alias mp="multipass"
-# Tail Portal Manager. TODO: This runs on every shell startup, which is slow and means you need a new shell whenever the pod id changes. Should execute only on invocation
-# alias tpm="k logs -n storageos $(kubectl get pod -n storageos -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}' | grep 'portal-manager') -f manager | jq"
 
 
 # Personal settings
