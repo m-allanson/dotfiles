@@ -69,12 +69,12 @@
 	changed = green
 	untracked = cyan
 [merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+	log = true # Include summaries of merged commits in newly created merge commit messages
+	conflictStyle = zdiff3 # Nicer diffs, hopefully. See https://github.blog/2022-01-24-highlights-from-git-2-35/
 [push]
 	default = simple
 [diff]
-	# Detect copies as well as renames
-	renames = copies
+	renames = copies # Detect copies as well as renames
+	algorithm = histogram # Histogram can give 'more human' diffs. 
 [include]
 	path = .gitconfig.personal
