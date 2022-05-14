@@ -130,3 +130,9 @@ Inspired by (and often copied from) from various places, such as:
 - https://github.com/jedrichards/dotfiles
 - http://dotfiles.github.com/
 - https://github.com/mathiasbynens/dotfiles
+
+## TODO
+
+- Check cross-platform handling for my setup
+- Check out the `run_once` stuff and `brew bundle` to auto install homebrew packages. https://www.chezmoi.io/user-guide/machines/macos/
+
