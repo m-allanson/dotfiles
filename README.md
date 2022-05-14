@@ -1,51 +1,43 @@
 # dotfiles
 
-My dotfiles for macOS.
+My dotfiles for macOS, managed via [chezmoi](https://www.chezmoi.io).
+
+## Requirements
+
+- [homebrew](https://brew.sh)
+- chezmoi (`brew install chezmoi`)
 
 ## Getting started
 
-### Clone repo
-
-Clone this repo. Note the clone destination path. In this example I'll use `~/d/dotfiles`.
-
----
-
-### Create `~/.zshenv`
-
-Create the file `~/.zshenv`. You will set two env vars, one pointing to this repo, the other a location for zsh addons. For example:
+Create a copy of this repo at a default location. Run `chezmoi cd` to switch to the repo directory.
 
 ```
-ZDOTDIR=~/d/dotfiles
-DOTFILEADDONSDIR=~/.zsh
+chezmoi init https://github.com/m-allanson/dotfiles.git
 ```
 
----
-
-### Create `~/.gitconfig`
-
-Create the file `~/.gitconfig`. It should should point to the `.gitconfig` file in this repo. For example:
+See what changes `chezmoi` will apply to your system:
 
 ```
-[include]
-	path = ~/d/dotfiles/.gitconfig
+chezmoi diff
 ```
 
----
-
-### Install addons
-
-Install any zsh addons to `$DOTFILEADDONSDIR`. In this example it's `~/.zsh`.
+Apply the changes:
 
 ```
-❯ ls ~/.zsh
-drwxr-xr-x zsh-autosuggestions/
+chezmoi apply
 ```
+
+Restart your shell to see any changes applied.
+
+## Addons
+
+NOTE : use brew install zsh-autosuggestions instead!
 
 Review the `.zshrc` file for expected addons.
 
 ---
 
-### Personal settings
+## Personal settings
 
 In this repo you can optionally:
 
@@ -65,10 +57,6 @@ In this repo you can optionally:
 Both of these files will be ignored by git.
 
 ---
-
-### Finish
-
-Restart your shell or run `source ~/.zshrc` to apply the updates.
 
 ## Other dependencies
 
@@ -92,6 +80,24 @@ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 <details>
 <summary>View my current numbers</summary>
 
+2022 numbers:
+
+```
+❯ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
+        0.07 real         0.04 user         0.02 sys
+        0.05 real         0.03 user         0.02 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+        0.05 real         0.03 user         0.01 sys
+```
+
+Old numbers:
+
 ```
 ❯ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
         0.18 real         0.08 user         0.10 sys
@@ -112,6 +118,7 @@ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 
 Inspired by (and often copied from) from various places, such as:
 
+- https://www.jacobbolda.com/chezmoi-dotfile-management
 - https://carlosbecker.com/posts/speeding-up-zsh/
 - https://scriptingosx.com/2019/06/moving-to-zsh/
 - https://github.com/jedrichards/dotfiles
