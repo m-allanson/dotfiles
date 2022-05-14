@@ -39,11 +39,11 @@ Review the `.zshrc` file for expected addons.
 
 ## Personal settings
 
-In this repo you can optionally:
+Add the following files directly to your `$HOME` directory. They won't be version controlled, or managed by chezmoi, but will be sourced as part of the environment setup.
 
-- create a `.personal` file for any non-public zsh settings.
+- A `.personal` file for any non-public zsh settings.
 
-- create a `.gitconfig.personal` file for any non-public git settings. For example:
+- A `.gitconfig.personal` file for any non-public git settings. For example:
 
 ```
 [user]
@@ -53,8 +53,6 @@ In this repo you can optionally:
 	user = -username
 	token = atokengoeshere
 ```
-
-Both of these files will be ignored by git.
 
 ---
 

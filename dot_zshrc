@@ -15,7 +15,7 @@ alias mp="multipass"
 
 
 # Personal settings
-# source "$HOME/.personal"
+source "$HOME/.personal"
 
 # Misc
 setopt HIST_IGNORE_DUPS
