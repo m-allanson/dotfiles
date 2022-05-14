@@ -29,9 +29,17 @@ chezmoi apply
 
 Restart your shell to see any changes applied.
 
+### Other `chezmoi` commands
+
+See the [command overview](https://www.chezmoi.io/user-guide/command-overview/) for more details.
+
+- `chezmoi cd` to switch to the chezmoi directory
+
+- `chezmoi add <filepath>` to sync a file's state from the target dir back to chezmoi's source dir.
+
 ## Addons
 
-NOTE : use brew install zsh-autosuggestions instead!
+NOTE: use brew install zsh-autosuggestions instead!
 
 Review the `.zshrc` file for expected addons.
 
