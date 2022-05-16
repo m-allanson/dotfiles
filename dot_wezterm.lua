@@ -4,6 +4,7 @@ return {
   font = wezterm.font("SFMono Nerd Font Mono"),
   color_scheme = "iceberg-dark",
   default_cwd = "Users/mike/d",
+  window_decorations = "RESIZE",
 
 --[[
 
