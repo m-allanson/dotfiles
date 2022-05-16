@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
-  font = wezterm.font("Hack Nerd Font Mono"),
+  font = wezterm.font("SFMono Nerd Font Mono"),
   color_scheme = "iceberg-dark",
   default_cwd = "Users/mike/d",
 
