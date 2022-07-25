@@ -12,7 +12,7 @@ My dotfiles for macOS, managed via [chezmoi](https://www.chezmoi.io).
 The init command will create a copy of this repo at a default location:
 
 ```
-chezmoi init https://github.com/m-allanson/dotfiles.git
+chezmoi init github.com/m-allanson/dotfiles --ssh
 ```
 
 > Note: Run `chezmoi cd` to switch to the repo directory.
