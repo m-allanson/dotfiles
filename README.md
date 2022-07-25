@@ -9,11 +9,13 @@ My dotfiles for macOS, managed via [chezmoi](https://www.chezmoi.io).
 
 ## Getting started
 
-Create a copy of this repo at a default location. Run `chezmoi cd` to switch to the repo directory.
+The init command will create a copy of this repo at a default location:
 
 ```
 chezmoi init https://github.com/m-allanson/dotfiles.git
 ```
+
+> Note: Run `chezmoi cd` to switch to the repo directory.
 
 See what changes `chezmoi` will apply to your system:
 
@@ -39,9 +41,9 @@ See the [command overview](https://www.chezmoi.io/user-guide/command-overview/) 
 
 ## Addons
 
-NOTE: use brew install zsh-autosuggestions instead!
+Review the `.zshrc` file for any expected addons.
 
-Review the `.zshrc` file for expected addons.
+NOTE: You can use `brew install zsh-autosuggestions` instead of manually installing it.
 
 ---
 
@@ -133,6 +135,4 @@ Inspired by (and often copied from) from various places, such as:
 
 ## TODO
 
-- Check cross-platform handling for my setup
 - Check out the `run_once` stuff and `brew bundle` to auto install homebrew packages. https://www.chezmoi.io/user-guide/machines/macos/
-
