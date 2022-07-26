@@ -21,8 +21,8 @@ disabled = true
 [package]
 disabled = true
 
-[gcloud]
-format = 'on [$symbol(\($project\))]($style) '
-[gcloud.region_aliases]
-europe-west1 = "eu-w1"
-europe-west2 = "eu-w2"
+# [gcloud]
+# format = 'on [$symbol(\($project\))]($style) '
+# [gcloud.region_aliases]
+# europe-west1 = "eu-w1"
+# europe-west2 = "eu-w2"
