@@ -48,7 +48,7 @@
 
 [core]
 	editor = vim
-	excludesfile = ~/d/dotfiles/.gitignore
+	excludesfile = ~/.gitignore
 	# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx
 	# 2020 note. is this still needed?
 	trustctime = false

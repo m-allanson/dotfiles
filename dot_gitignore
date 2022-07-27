@@ -1,0 +1,14 @@
+# General
+.DS_Store
+
+# Thumbnails
+._*
+
+# Env
+.env
+
+# Temp / caches
+node_modules/
+.npm/
+.temp/
+.cache/
