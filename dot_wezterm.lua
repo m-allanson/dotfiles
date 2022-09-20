@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm';
+local act = wezterm.action
 
 return {
   font = wezterm.font("SFMono Nerd Font Mono"),
@@ -36,5 +37,28 @@ return {
     -- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to match Terminal.app behavior
     { key="LeftArrow", mods="OPT", action={SendKey={key="b", mods="ALT"}}},
     { key="RightArrow", mods="OPT", action={SendKey={key="f", mods="ALT"}}},
-  }
+  },
+  mouse_bindings = {
+    -- Change the default click behavior so that it only selects
+    -- text and doesn't open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'NONE',
+      action = act.CompleteSelection 'PrimarySelection',
+    },
+
+    -- and make CMD-Click open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'CMD',
+      action = act.OpenLinkAtMouseCursor,
+    },
+
+    -- Disable the 'Down' event of CMD-Click to avoid weird program behaviors
+    {
+      event = { Down = { streak = 1, button = 'Left' } },
+      mods = 'CMD',
+      action = act.Nop,
+    },
+  },
 }
