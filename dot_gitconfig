@@ -1,4 +1,10 @@
 [alias]
+	sw = switch
+	swc = switch -c
+	brd = branch -D
+	com = commit -m
+	coa = commit --amend --no-edit
+	
 	# Readable concise status
 	s = status -s -b
 
@@ -12,26 +18,17 @@
 	# other aliases) via https://gist.github.com/robmiller/6018582
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 
-	# Reset the current branch to upstream's version
-	rs-upstream = "!git stash && git fetch upstream -p && git reset --hard upstream/$(git branch-name)"
-
 	# Reset the current branch to origin's version
 	rs = "!git stash && git fetch origin -p && git reset --hard origin/$(git branch-name)"
 
 	# Push the current branch to origin and track it
 	publish = "!git push -u origin $(git branch-name)"
 
-	# Checkout a new branch in the format feat/{feature-name}
-	nf = "!f() { git checkout -b \"feat/$1\" 2> /dev/null || git checkout \"feat/$1\"; }; f"
-
 	# Delete all local branches that have been merged with the current branch. Ref: https://stackoverflow.com/a/46192689/517553
 	dm = "!git fetch -p && git branch -vv | grep ': gone]' | grep -v \"*\" | awk '{ print $1; }' | xargs -r git branch -d"
-					
+
 	# Amend the previous commit
 	amend = "!git add -A && git commit --amend --no-edit"
-
-	# Merge changes from upstream into current branch
-	#merge-upstream = "!git rs-upstream"
 
 	# Update logs based on http://stackoverflow.com/a/34467298/517553
 	lg = "!git lg1"
@@ -45,6 +42,15 @@
 
 	# 'NEW BrancheS' list local branches ordered by newest commit date
 	newbs = for-each-ref --sort=committerdate refs/heads/ --format='%(color:reset)committed: %(color:yellow)%(committerdate:short) %(color:cyan)%(refname:short) %(color:reset)%(authorname)'
+
+	# Checkout a new branch in the format feat/{feature-name}
+	# nf = "!f() { git checkout -b \"feat/$1\" 2> /dev/null || git checkout \"feat/$1\"; }; f"
+
+	# Reset the current branch to upstream's version
+	# rs-upstream = "!git stash && git fetch upstream -p && git reset --hard upstream/$(git branch-name)"
+
+	# Merge changes from upstream into current branch
+	#merge-upstream = "!git rs-upstream"
 
 [core]
 	editor = vim
