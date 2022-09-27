@@ -71,8 +71,13 @@
 [merge]
 	log = true # Include summaries of merged commits in newly created merge commit messages
 	conflictStyle = zdiff3 # Nicer diffs, hopefully. See https://github.blog/2022-01-24-highlights-from-git-2-35/
+[pull]
+	rebase = true
 [push]
 	default = simple
+[rebase]
+	autostash = true
+	autosquash = true
 [diff]
 	renames = copies # Detect copies as well as renames
 	algorithm = histogram # Histogram can give 'more human' diffs. 
