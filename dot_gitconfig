@@ -2,7 +2,7 @@
 	brd = branch -D
 	coa = commit --amend --no-edit
 	com = commit -m
-	pu = "!git push origin $(git branch-name)"
+	ps = "!git push origin $(git branch-name)"
 	sw = switch
 	swc = switch -c
 	
