@@ -1,9 +1,10 @@
 [alias]
+	brd = branch -D
+	coa = commit --amend --no-edit
+	com = commit -m
+	pu = "!git push origin $(git branch-name)"
 	sw = switch
 	swc = switch -c
-	brd = branch -D
-	com = commit -m
-	coa = commit --amend --no-edit
 	
 	# Readable concise status
 	s = status -s -b
@@ -81,6 +82,7 @@
 	rebase = true
 [push]
 	default = simple
+	autoSetupRemote = true
 [rebase]
 	autostash = true
 	autosquash = true
