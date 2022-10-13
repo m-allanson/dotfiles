@@ -2,8 +2,10 @@
 alias ls="ls -GlAhF"
 alias cps="jq '.scripts' package.json" # list scripts from package.json
 alias m="smerge"
+alias mm="smerge ."
 alias s="serve" # quick web server https://github.com/vercel/serve
 alias c="code"
+alias cc="code ."
 alias mp="multipass"
 
 

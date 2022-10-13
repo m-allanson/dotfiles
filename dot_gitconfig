@@ -1,16 +1,35 @@
 [alias]
+	a = add
+	ad = add
+	# https://nuclearsquid.com/writings/git-add/
+	adp = add --patch
+
+	br = branch
 	brd = branch -D
-	coa = commit --amend --no-edit
+
+	co = commit
 	com = commit -m
+	coa = commit --amend --no-edit
+
+	di = diff
+	dis = diff --staged
+
 	ps = "!git push origin $(git branch-name)"
+
 	sw = switch
 	swc = switch -c
-	
+
+	re = rebase
+	# Interactive rebase with the given number of latest commits.
+	rei = "!r() { git rebase -i HEAD~$1; }; r"
+
 	# Readable concise status
-	s = status -s -b
+	s = st
+	st = status -s -b
 
 	# Readable pretty logs
-	l = log --format='%h %Cred%ar%Creset %Cgreen%s' --graph
+	l = lo
+	lo = log --format='%h %Cred%ar%Creset %Cgreen%s' --graph
 
 	# View aliases
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\:\\ /
@@ -22,9 +41,6 @@
 	# Reset the current branch to origin's version
 	rs = "!git stash && git fetch origin -p && git reset --hard origin/$(git branch-name)"
 
-	# Push the current branch to origin and track it
-	publish = "!git push -u origin $(git branch-name)"
-
 	# Delete all local branches that have been merged with the current branch. Ref: https://stackoverflow.com/a/46192689/517553
 	dm = "!git fetch -p && git branch -vv | grep ': gone]' | grep -v \"*\" | awk '{ print $1; }' | xargs -r git branch -d"
 
@@ -32,17 +48,19 @@
 	amend = "!git add -A && git commit --amend --no-edit"
 
 	# Update logs based on http://stackoverflow.com/a/34467298/517553
-	lg = "!git lg1"
-    lg1 = "!git lg1-specific --all"
-    lg2 = "!git lg2-specific --all"
-    lg3 = "!git lg3-specific --all"
+	lo1 = "!git lo1-specific --all"
+	lo2 = "!git lo2-specific --all"
+	lo3 = "!git lo3-specific --all"
 
-    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
-    lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+	lo1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+	lo2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+	lo3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 
 	# 'NEW BrancheS' list local branches ordered by newest commit date
 	newbs = for-each-ref --sort=committerdate refs/heads/ --format='%(color:reset)committed: %(color:yellow)%(committerdate:short) %(color:cyan)%(refname:short) %(color:reset)%(authorname)'
+
+	# Push the current branch to origin and track it
+	# publish = "!git push -u origin $(git branch-name)"
 
 	# Checkout a new branch in the format feat/{feature-name}
 	# nf = "!f() { git checkout -b \"feat/$1\" 2> /dev/null || git checkout \"feat/$1\"; }; f"
@@ -51,10 +69,10 @@
 	# rs-upstream = "!git stash && git fetch upstream -p && git reset --hard upstream/$(git branch-name)"
 
 	# Merge changes from upstream into current branch
-	#merge-upstream = "!git rs-upstream"
+	# merge-upstream = "!git rs-upstream"
 
 [core]
-	editor = vim
+	editor = micro
 	excludesfile = ~/.gitignore
 	# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx
 	# 2020 note. is this still needed?
