@@ -13,6 +13,8 @@
 
 	di = diff
 	dis = diff --staged
+	# dii for "DIff Inline"
+	dii = -c delta.side-by-side=false diff
 
 	ps = "!git push origin $(git branch-name)"
 
@@ -74,6 +76,7 @@
 [core]
 	editor = micro
 	excludesfile = ~/.gitignore
+	pager = delta
 	# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx
 	# 2020 note. is this still needed?
 	trustctime = false
@@ -111,3 +114,21 @@
 [rebase]
 	autostash = true
 	autosquash = true
+
+# Delta config
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	features = decorations
+	side-by-side = true
+	syntax-theme = Nord
+[delta "interactive"]
+	keep-plus-minus-markers = false
+[delta "decorations"]
+	commit-decoration-style = blue ol
+	commit-style = raw
+	file-style = omit
+	hunk-header-decoration-style = blue box
+	hunk-header-file-style = red
+	hunk-header-line-number-style = "#067a00"
+	hunk-header-style = file line-number syntax
