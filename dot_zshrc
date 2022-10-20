@@ -17,7 +17,7 @@ setopt HIST_IGNORE_DUPS
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
-export EDITOR="vim"
+export EDITOR="micro"
 
 # volta
 export VOLTA_HOME="$HOME/.volta"
