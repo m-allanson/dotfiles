@@ -2,7 +2,7 @@ local wezterm = require 'wezterm';
 local act = wezterm.action
 
 return {
-  font = wezterm.font("SFMono Nerd Font Mono"),
+  font = wezterm.font("MonaspiceAr Nerd Font Propo"),
   color_scheme = "iceberg-dark",
   default_cwd = "Users/mike/d",
   window_decorations = "RESIZE",
