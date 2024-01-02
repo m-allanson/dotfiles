@@ -43,13 +43,11 @@ See the [command overview](https://www.chezmoi.io/user-guide/command-overview/) 
 
 Review the `.zshrc` file for any expected addons.
 
-NOTE: You can use `brew install zsh-autosuggestions` instead of manually installing it.
-
 ---
 
 ## Personal settings
 
-Add the following files directly to your `$HOME` directory. They won't be version controlled, or managed by chezmoi, but will be sourced as part of the environment setup.
+On first run, the following (empty) files will be added to your `$HOME` directory. They won't be version controlled, or managed by chezmoi, but will be sourced as part of the environment setup.
 
 - A `.personal` file for any non-public zsh settings.
 
@@ -68,14 +66,7 @@ Add the following files directly to your `$HOME` directory. They won't be versio
 
 ## Other dependencies
 
-This `.zshrc` expects the following programs to be available:
-
-- [jq](https://github.com/stedolan/jq)
-- [volta](https://volta.sh/)
-- [serve](https://github.com/vercel/serve)
-- [starship](https://starship.rs)
-
-Ensure they are installed on your system.
+These dotfiles have some dependencies. You will need to ensure `homebrew` is available before using this repo. After that, the `run_once_` scripts should handle the remaining dependencies.
 
 ## Benchmarking
 
@@ -88,7 +79,27 @@ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 <details>
 <summary>View my current numbers</summary>
 
+2024 numbers:
+
+Apple M3 Pro Macbook Pro (2023)
+
+```
+❯ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
+        0.05 real         0.02 user         0.02 sys
+        0.03 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+        0.02 real         0.01 user         0.01 sys
+```
+
 2022 numbers:
+
+2.3 Ghz 8-Core Intel Core i9 Macbook Pro (2019)
 
 ```
 ❯ for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
