@@ -25,6 +25,11 @@
 	# Interactive rebase with the given number of latest commits.
 	rei = "!r() { git rebase -i HEAD~$1; }; r"
 
+	wt = worktree
+	wta = worktree add
+	wtr = worktree remove
+	wtl = worktree list
+
 	# Readable concise status
 	s = st
 	st = status -s -b
