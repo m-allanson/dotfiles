@@ -55,20 +55,11 @@ source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # rust
 source "$HOME/.cargo/env"
 
-
 # For pipx
 export PATH="$PATH:$HOME/.local/bin"
 
 # Prompt
 export STARSHIP_CONFIG="$HOME/starship.toml"
 eval "$(starship init zsh)"
-
-# Old. Can probably remove the following lines
-
-# Heroku autocompletions
-# HEROKU_AC_ZSH_SETUP_PATH=/Users/mike/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
-# Disable telemetry for SAM CLI
-# export SAM_CLI_TELEMETRY=0
 
 # TODO: check in and see if this issue has been fixed https://github.com/starship/starship/issues/560
