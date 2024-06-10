@@ -52,6 +52,10 @@ source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # rust
 source "$HOME/.cargo/env"
 
+
+# For pipx
+export PATH="$PATH:$HOME/.local/bin"
+
 # Prompt
 export STARSHIP_CONFIG="$HOME/starship.toml"
 eval "$(starship init zsh)"
