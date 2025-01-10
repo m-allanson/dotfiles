@@ -3,6 +3,9 @@ add_newline = false
 [aws]
 disabled = true
 
+[docker_context]
+disabled = true
+
 [git_branch]
 style = "bright-white"
 
