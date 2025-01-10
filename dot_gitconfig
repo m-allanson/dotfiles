@@ -17,6 +17,7 @@
 	dii = -c delta.side-by-side=false diff
 
 	ps = "!git push origin $(git branch-name)"
+	pst = "!git push origin --tags $(git branch-name)"
 
 	sw = switch
 	swc = switch -c
@@ -24,7 +25,6 @@
 	# List tags in semantic release order
 	tl = "!git tag --sort=-creatordate | grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+(-rc\\.[0-9]+)?$' | head -n 50 | sort -V | awk '{split($0, parts, \"-rc\"); if (length(parts) == 2) rc[parts[1]] = rc[parts[1]] \"\\n\" $0; else stable[++i] = $0} END {for (j = 1; j <= i; j++) { if (rc[stable[j]]) printf \"%s\\n\", rc[stable[j]]; print stable[j]; }}' | awk 'NF' | tail -n 10"
 	tlf = "!git fetch --tags --prune --depth=1 && git tl"
-	tp = "!git push --tags"
 
 	re = rebase
 	# Interactive rebase with the given number of latest commits.
