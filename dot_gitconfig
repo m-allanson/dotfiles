@@ -13,8 +13,6 @@
 
 	di = diff
 	dis = diff --staged
-	# dii for "DIff Inline"
-	dii = -c delta.side-by-side=false diff
 
 	ps = "!git push origin $(git branch-name)"
 	pst = "!git push origin --tags $(git branch-name)"
@@ -23,7 +21,7 @@
 	swc = switch -c
 
 	# List tags in semantic release order
-	tl = "!git tag --sort=-creatordate | grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+(-rc\\.[0-9]+)?$' | head -n 50 | sort -V | awk '{split($0, parts, \"-rc\"); if (length(parts) == 2) rc[parts[1]] = rc[parts[1]] \"\\n\" $0; else stable[++i] = $0} END {for (j = 1; j <= i; j++) { if (rc[stable[j]]) printf \"%s\\n\", rc[stable[j]]; print stable[j]; }}' | awk 'NF' | tail -n 10"
+	tl = "!git tag --sort=-creatordate | grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+(-rc\\.[0-9]+)?$' | head -n 50 | sort -V | awk '{split($0, parts, \"-rc\"); if (length(parts) == 2) rc[parts[1]] = rc[parts[1]] \"\\n\" $0; else stable[++i] = $0} END { for (j = 1; j <= i; j++) { if (rc[stable[j]]) printf \"%s\\n\", rc[stable[j]]; print stable[j]; } for (key in rc) { unmatched = 1; for (j = 1; j <= i; j++) { if (stable[j] == key) unmatched = 0; } if (unmatched) printf \"%s\\n\", rc[key]; } }' | awk 'NF' | tail -n 10"
 	tlf = "!git fetch --tags --prune --depth=1 && git tl"
 
 	re = rebase
@@ -38,6 +36,9 @@
 	# Readable concise status
 	s = st
 	st = status -s -b
+
+	f = fetch
+	fo = fetch origin
 
 	# Readable pretty logs
 	l = lo
@@ -71,22 +72,10 @@
 	# 'NEW BrancheS' list local branches ordered by newest commit date
 	newbs = for-each-ref --sort=committerdate refs/heads/ --format='%(color:reset)committed: %(color:yellow)%(committerdate:short) %(color:cyan)%(refname:short) %(color:reset)%(authorname)'
 
-	# Push the current branch to origin and track it
-	# publish = "!git push -u origin $(git branch-name)"
-
-	# Checkout a new branch in the format feat/{feature-name}
-	# nf = "!f() { git checkout -b \"feat/$1\" 2> /dev/null || git checkout \"feat/$1\"; }; f"
-
-	# Reset the current branch to upstream's version
-	# rs-upstream = "!git stash && git fetch upstream -p && git reset --hard upstream/$(git branch-name)"
-
-	# Merge changes from upstream into current branch
-	# merge-upstream = "!git rs-upstream"
-
 [core]
 	editor = micro
 	excludesfile = ~/.gitignore
-	pager = delta
+	# pager = delta
 	# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx
 	# 2020 note. is this still needed?
 	trustctime = false
