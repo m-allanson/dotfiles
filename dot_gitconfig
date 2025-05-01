@@ -22,7 +22,7 @@
 
 	# List tags in semantic release order
 	tl = "!git tag --sort=-creatordate | grep -E '^[0-9]+\\.[0-9]+\\.[0-9]+(-rc\\.[0-9]+)?$' | head -n 50 | sort -V | awk '{split($0, parts, \"-rc\"); if (length(parts) == 2) rc[parts[1]] = rc[parts[1]] \"\\n\" $0; else stable[++i] = $0} END { for (j = 1; j <= i; j++) { if (rc[stable[j]]) printf \"%s\\n\", rc[stable[j]]; print stable[j]; } for (key in rc) { unmatched = 1; for (j = 1; j <= i; j++) { if (stable[j] == key) unmatched = 0; } if (unmatched) printf \"%s\\n\", rc[key]; } }' | awk 'NF' | tail -n 10"
-	tlf = "!git fetch --tags --prune --depth=1 && git tl"
+	# tlf = "!git fetch --tags --prune --depth=1 && git tl" # --depth=1 sets the repo to shallow mode. Run `git fetch --unshallow` to fix 
 
 	re = rebase
 	# Interactive rebase with the given number of latest commits.
