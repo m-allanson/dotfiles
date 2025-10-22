@@ -1,6 +1,7 @@
 #  Aliases
 alias ls="ls -GlAhF"
 alias cps="jq '.scripts' package.json" # list scripts from package.json
+alias nr="node --run" # newer node versions support this instead of npm run
 alias m="smerge"
 alias mm="smerge ."
 alias c="code"
