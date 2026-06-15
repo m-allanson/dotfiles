@@ -6,6 +6,8 @@ alias m="smerge"
 alias mm="smerge ."
 alias c="code"
 alias cc="code ."
+alias z="zed"
+alias zz="zed ."
 alias mp="multipass"
 alias k="kubectl"
 
