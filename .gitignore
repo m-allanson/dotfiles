@@ -3,3 +3,6 @@
 .gitconfig.personal
 .vscode/settings.json
 .zcompdump
+
+.cache/
+**/.claude/settings.local.json

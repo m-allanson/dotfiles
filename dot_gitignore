@@ -12,3 +12,4 @@ node_modules/
 .npm/
 .temp/
 .cache/
+**/.claude/settings.local.json

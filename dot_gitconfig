@@ -98,7 +98,7 @@
 	untracked = cyan
 [diff]
 	renames = copies # Detect copies as well as renames
-	algorithm = histogram # Histogram can give 'more human' diffs. 
+	algorithm = histogram # Histogram can give 'more human' diffs.
 [include]
 	path = .gitconfig.personal
 [init]

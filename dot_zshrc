@@ -22,9 +22,9 @@ export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 export EDITOR="micro"
 
-# volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# Docker Sandbox
+export SBX_NO_TELEMETRY=1
+
 
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -60,6 +60,9 @@ source "$HOME/.cargo/env"
 
 # For pipx
 export PATH="$PATH:$HOME/.local/bin"
+
+# Mise
+eval "$(mise activate zsh)"
 
 # Prompt
 export STARSHIP_CONFIG="$HOME/starship.toml"
