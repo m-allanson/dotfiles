@@ -115,21 +115,3 @@
 	autostash = true
 	autosquash = true
 	updateRefs = true
-
-# Delta config
-[interactive]
-	diffFilter = delta --color-only --features=interactive
-[delta]
-	features = decorations
-	side-by-side = true
-	syntax-theme = Nord
-[delta "interactive"]
-	keep-plus-minus-markers = true
-[delta "decorations"]
-	commit-decoration-style = blue ol
-	commit-style = raw
-	file-style = omit
-	hunk-header-decoration-style = blue box
-	hunk-header-file-style = red
-	hunk-header-line-number-style = "#067a00"
-	hunk-header-style = file line-number syntax
