@@ -1,7 +1,39 @@
-{{ if eq .chezmoi.arch "amd64" -}}
-eval "$(/usr/local/bin/brew shellenv)"
-{{ else if eq .chezmoi.arch "arm64" -}}
-eval "$(/opt/homebrew/bin/brew shellenv)"
-{{ end -}}
+# ~/.zprofile — sourced by login shells (every new Ghostty tab, and GUI apps
+# like Sublime Merge that read the login environment).
+#
+# Keep this file fast: every external command run here costs ~20ms+ on this
+# machine because of endpoint security exec checks.
 
+# ---------------------------------------------------------------------------
+# Homebrew
+#
+# Apple Silicon: static copy of `brew shellenv zsh` output, so
+# brew isn't run on every shell start — this machine runs endpoint security
+# software that makes each process launch slow. If Homebrew changes what
+# shellenv outputs, re-run it and paste the result into the block below.
+# To revert, replace the block with:
+#   eval "$(/opt/homebrew/bin/brew shellenv)"
+#
+# Intel: no endpoint security slowdown there, so just run shellenv directly.
+# ---------------------------------------------------------------------------
+{{ if eq .chezmoi.arch "arm64" -}}
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+export FPATH
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+[ -z "${MANPATH-}" ] || { export MANPATH="${MANPATH%"${MANPATH##*[!:]}"}"; export MANPATH=":${MANPATH#"${MANPATH%%[!:]*}"}"; };
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+{{- else -}}
+eval "$(/usr/local/bin/brew shellenv)"
+{{- end }}
+
+# ---------------------------------------------------------------------------
+# mise
+#
+# Shims make mise-managed tools (node, python, …) visible to login shells and
+# GUI apps. Interactive shells additionally run `mise activate` in ~/.zshrc,
+# which puts the real tool paths ahead of these shims.
+# ---------------------------------------------------------------------------
 export PATH="$HOME/.local/share/mise/shims:$PATH"

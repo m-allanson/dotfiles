@@ -44,11 +44,18 @@ fpath+=~/.zfunc
 
 # Refer to https://carlosbecker.com/posts/speeding-up-zsh/
 autoload -Uz compinit
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump) ]; then
+# Rebuild the dump (with security check) if it's older than 48h, else load it unchecked.
+# The age check is a zsh glob qualifier, so no external process is spawned on the fast path.
+# Skipping the external process avoids slowdown from some security tools that check every spawned process.
+# The dump is deleted before rebuilding so compinit always rewrites it (resetting its age).
+_zcompdump_stale=( $HOME/.zcompdump(N.mh+48) )
+if (( $#_zcompdump_stale )); then
+  rm -f "$HOME/.zcompdump"
   compinit -d "$HOME/.zcompdump"
 else
   compinit -d "$HOME/.zcompdump" -C
 fi
+unset _zcompdump_stale
 
 # External dependencies
 # https://github.com/zsh-users/zsh-autosuggestions
